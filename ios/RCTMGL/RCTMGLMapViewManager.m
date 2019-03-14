@@ -522,7 +522,7 @@ RCT_EXPORT_METHOD(setCamera:(nonnull NSNumber*)reactTag
     if (fullyRendered) {
         [self reactMapDidChange:mapView eventType:RCT_MAPBOX_DID_FINISH_RENDERING_FRAME_FULLY];
     } else {
-        [self reactMapDidChange:mapView eventType:RCT_MAPBOX_DID_FINSIH_RENDERING_FRAME];
+        [self reactMapDidChange:mapView eventType:RCT_MAPBOX_DID_FINISH_RENDERING_FRAME];
     }
 }
 

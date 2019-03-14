@@ -25,7 +25,7 @@ NSString *const RCT_MAPBOX_DID_FINISH_LOADING_MAP = @"didfinishloadingmap";
 NSString *const RCT_MAPBOX_DID_FAIL_LOADING_MAP = @"didfailoadingmap";
 
 NSString *const RCT_MAPBOX_WILL_START_RENDERING_FRAME = @"willstartrenderingframe";
-NSString *const RCT_MAPBOX_DID_FINSIH_RENDERING_FRAME = @"didfinishrenderingframe";
+NSString *const RCT_MAPBOX_DID_FINISH_RENDERING_FRAME = @"didfinishrenderingframe";
 NSString *const RCT_MAPBOX_DID_FINISH_RENDERING_FRAME_FULLY = @"didfinishrenderingframefully";
 
 NSString *const RCT_MAPBOX_WILL_START_RENDERING_MAP = @"willstartrenderingmap";
