@@ -22,10 +22,10 @@ NSString *const RCT_MAPBOX_REGION_DID_CHANGE = @"regiondidchange";
 
 NSString *const RCT_MAPBOX_WILL_START_LOADING_MAP = @"willstartloadingmap";
 NSString *const RCT_MAPBOX_DID_FINISH_LOADING_MAP = @"didfinishloadingmap";
-NSString *const RCT_MAPBOX_DID_FAIL_LOADING_MAP = @"didfailoadingmap";
+NSString *const RCT_MAPBOX_DID_FAIL_LOADING_MAP = @"didfailloadingmap";
 
 NSString *const RCT_MAPBOX_WILL_START_RENDERING_FRAME = @"willstartrenderingframe";
-NSString *const RCT_MAPBOX_DID_FINSIH_RENDERING_FRAME = @"didfinishrenderingframe";
+NSString *const RCT_MAPBOX_DID_FINISH_RENDERING_FRAME = @"didfinishrenderingframe";
 NSString *const RCT_MAPBOX_DID_FINISH_RENDERING_FRAME_FULLY = @"didfinishrenderingframefully";
 
 NSString *const RCT_MAPBOX_WILL_START_RENDERING_MAP = @"willstartrenderingmap";
