@@ -1,13 +1,10 @@
-Hey all - one more update from our side, thanks as always for your continued patience and support. We’ve thought a lot about the best way in which to continue supporting this project and community going forward and have decided it’s in the best interest of both to transition this project to be a community-driven project led by its original author, @nitaliano. This year the Mapbox mobile engineering team is focused on some large (and exciting!) new features in our native Android and iOS SDKs and we believe this decision brings the best path forward to guarantee this project continues being actively developed.
+# Deprecation notice
 
-What this means in practical terms:
+This repository is no longer actively maintained. 
 
-* We’re looking for contributors! If you and your company depend on this project and would like to join the initiative, please reach out to @nitaliano  and share more about your plans.
-* We’re moving this repo under @nitaliano’s account but nothing else changes: we’ll keep the git history, issue tracker, and code open source as it is today.
-* @nitaliano has been hard at work smoothing out the current v7 branch and you should expect a pre-release being pushed out in a couple of weeks.
-* Mapbox remains committed to prioritizing and fixing Android or iOS native issues on our Maps SDK that this community surfaces. Please keep opening issues on https://github.com/mapbox/mapbox-gl-native and tagging @zugaldia for visibility.
+Continued development of react-native-mapbox-gl may be found in the community driven repository at [https://github.com/react-native-mapbox-gl/maps](https://github.com/react-native-mapbox-gl/maps). This new repository uses the latest versions of the Mapbox SDKs for iOS and Android, and contains a long range of improvements over the current one. We recommend you review the [changelog](https://github.com/react-native-mapbox-gl/maps/blob/master/CHANGELOG.md) for the new repository and transition to it.
 
-We’re grateful to all of you for making this project a vibrant community, we’re excited to see what this community builds next.
+This repository will _only_ accept PRs containing bug fixes. Any new feature development will happen in the new repository.
 
 # Mapbox Maps SDK for React Native
 
@@ -26,6 +23,7 @@ Not a Mapbox user yet? [Sign up for an account here](https://www.mapbox.com/sign
 
 
 ## Installation
+🛑 NB: The current release `6.1.4` is not up on NPM. You have to get the master version from github. 🛑
 
 **Dependencies**
 
@@ -41,12 +39,12 @@ cd react-native-mapbox-gl
 
 **Yarn**
 ```
-yarn add @mapbox/react-native-mapbox-gl
+yarn add https://github.com/nitaliano/react-native-mapbox-gl#master
 ```
 
 **Npm**
 ```
-npm install @mapbox/react-native-mapbox-gl --save
+npm install https://github.com/nitaliano/react-native-mapbox-gl/tarball/master
 ```
 
 ## Installation Guides

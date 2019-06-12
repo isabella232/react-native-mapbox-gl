@@ -1,16 +1,16 @@
 import React from 'react';
 import MapboxGL from '@mapbox/react-native-mapbox-gl';
 import {
-  View,
-  Text,
   FlatList,
-  StyleSheet,
   Modal,
+  StyleSheet,
+  Text,
   TouchableOpacity,
+  View,
 } from 'react-native';
 import {Icon} from 'react-native-elements';
+import SafeAreaView from 'react-native-safe-area-view';
 
-// Components
 import MapHeader from './components/common/MapHeader';
 // Styles
 import sheet from './styles/sheet';
@@ -27,7 +27,7 @@ import FlyTo from './components/FlyTo';
 import FitBounds from './components/FitBounds';
 import SetUserTrackingModes from './components/SetUserTrackingModes';
 import SetUserLocationVerticalAlignment from './components/SetUserLocationVerticalAlignment';
-import ShowRegionDidChange from './components/ShowRegionDidChange';
+import ShowRegionChange from './components/ShowRegionChange';
 import CustomIcon from './components/CustomIcon';
 import YoYo from './components/YoYo';
 import EarthQuakes from './components/EarthQuakes';
@@ -57,14 +57,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-  header: {
-    marginTop: 48,
-    fontSize: 24,
-    textAlign: 'center',
-  },
   exampleList: {
     flex: 1,
-    marginTop: 60 + 12, // header + list padding,
   },
   exampleListItemBorder: {
     borderBottomWidth: StyleSheet.hairlineWidth,
@@ -75,6 +69,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    backgroundColor: colors.secondary.white,
   },
   exampleListLabel: {
     fontSize: 18,
@@ -106,7 +101,7 @@ const Examples = [
     'Set User Location Vertical Alignment',
     SetUserLocationVerticalAlignment,
   ),
-  new ExampleItem('Show Region Did Change', ShowRegionDidChange),
+  new ExampleItem('Show Region Change', ShowRegionChange),
   new ExampleItem('Custom Icon', CustomIcon),
   new ExampleItem('Yo Yo Camera', YoYo),
   new ExampleItem('Clustering Earthquakes', EarthQuakes),
@@ -199,15 +194,20 @@ class App extends React.Component {
 
     return (
       <Modal {...modalProps}>
-        <View style={styles.exampleBackground}>
-          {modalProps.visible ? (
-            <item.Component
-              key={item.label}
-              label={item.label}
-              onDismissExample={this.onCloseExample}
-            />
-          ) : null}
-        </View>
+        <SafeAreaView
+          style={[sheet.matchParent, {backgroundColor: colors.primary.pink}]}
+          forceInset={{top: 'always'}}
+        >
+          <View style={styles.exampleBackground}>
+            {modalProps.visible ? (
+              <item.Component
+                key={item.label}
+                label={item.label}
+                onDismissExample={this.onCloseExample}
+              />
+            ) : null}
+          </View>
+        </SafeAreaView>
       </Modal>
     );
   }
@@ -218,30 +218,40 @@ class App extends React.Component {
         return null;
       }
       return (
-        <View style={sheet.matchParent}>
-          <Text style={styles.noPermissionsText}>
-            You need to accept location permissions in order to use this example
-            applications
-          </Text>
-        </View>
+        <SafeAreaView
+          style={[sheet.matchParent, {backgroundColor: colors.primary.blue}]}
+          forceInset={{top: 'always'}}
+        >
+          <View style={sheet.matchParent}>
+            <Text style={styles.noPermissionsText}>
+              You need to accept location permissions in order to use this
+              example applications
+            </Text>
+          </View>
+        </SafeAreaView>
       );
     }
 
     return (
-      <View style={sheet.matchParent}>
-        <MapHeader label="React Native Mapbox GL" />
-
+      <SafeAreaView
+        style={[sheet.matchParent, {backgroundColor: colors.primary.blue}]}
+        forceInset={{top: 'always'}}
+      >
         <View style={sheet.matchParent}>
-          <FlatList
-            style={styles.exampleList}
-            data={Examples}
-            keyExtractor={item => item.label}
-            renderItem={this.renderItem}
-          />
-        </View>
+          <MapHeader label="React Native Mapbox GL" />
 
-        {this.renderActiveExample()}
-      </View>
+          <View style={sheet.matchParent}>
+            <FlatList
+              style={styles.exampleList}
+              data={Examples}
+              keyExtractor={item => item.label}
+              renderItem={this.renderItem}
+            />
+          </View>
+
+          {this.renderActiveExample()}
+        </View>
+      </SafeAreaView>
     );
   }
 }
